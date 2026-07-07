@@ -10,6 +10,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+@font-face{
+  font-family:"Bropella";
+  src:url("fonts/Bropella.otf") format("opentype");
+  font-weight:normal;font-style:normal;font-display:swap;
+}
 :root{
   --bg:#082930;
   --bg2:#0C3A44;
@@ -127,9 +132,9 @@ header{
 
 /* big display type on the right */
 .hero-display{
-  font-family:var(--display);
-  font-size:clamp(3.5rem,10.5vw,10rem);
-  line-height:.86;letter-spacing:.01em;text-transform:uppercase;
+  font-family:"Bropella",var(--display);
+  font-size:clamp(4rem,12vw,11rem);
+  line-height:.92;letter-spacing:.01em;
   text-align:right;color:transparent;
   -webkit-text-stroke:1.5px rgba(234,243,242,.28);
   position:relative;
