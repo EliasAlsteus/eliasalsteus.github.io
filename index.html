@@ -85,7 +85,7 @@ nav.hidden{transform:translateY(-100%)}
 /* ---------- hero ---------- */
 header{
   min-height:100svh;position:relative;overflow:hidden;
-  display:flex;flex-direction:column;justify-content:center;
+  display:flex;flex-direction:column;padding-top:76px;
   background:
     radial-gradient(ellipse at 78% 30%,rgba(14,70,85,.9),transparent 60%),
     linear-gradient(160deg,var(--bg3) 0%,var(--bg2) 42%,var(--bg) 100%);
@@ -108,8 +108,8 @@ header{
 .grain{position:absolute;inset:0;opacity:.06;mix-blend-mode:overlay;
   background-image:radial-gradient(rgba(255,255,255,.7) 1px,transparent 1px);background-size:4px 4px}
 
-.hero-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
-.hero-copy{max-width:560px;padding-top:70px}
+.hero-grid{position:relative;z-index:2;width:100%;flex:1;display:grid;grid-template-columns:1fr auto;align-items:center;align-content:center;gap:40px}
+.hero-copy{max-width:560px}
 .eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
 .eyebrow::before{content:"";width:38px;height:1.5px;background:var(--accent)}
 .hero-copy h1{
@@ -151,7 +151,7 @@ header{
 @keyframes slideIn{to{transform:none;opacity:1}}
 
 /* hero footer row: counter + socials */
-.hero-foot{position:absolute;bottom:34px;left:0;right:0;z-index:2}
+.hero-foot{position:relative;z-index:2;padding:28px 0 34px}
 .hero-foot .wrap{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
 .counter{font-family:var(--display);font-size:2.4rem;color:var(--foam);letter-spacing:.02em;line-height:1}
 .counter .sep{color:var(--faint);margin:0 6px}
@@ -291,7 +291,6 @@ footer .mono{font-family:var(--mono)}
 @media(max-width:960px){
   .hero-grid{grid-template-columns:1fr;gap:8px}
   .hero-display{text-align:left;order:-1;font-size:clamp(3rem,15vw,6rem);margin-bottom:8px}
-  .hero-copy{padding-top:110px}
   .ocean svg{width:70%;opacity:.6}
   .ocean .foam{width:60%}
 }
@@ -374,6 +373,9 @@ footer .mono{font-family:var(--mono)}
     <div class="wrap">
       <div class="counter">01<span class="sep">/</span><span class="tot">04</span><small>Student · Builder · Learner</small></div>
       <div class="socials">
+        <a href="https://www.linkedin.com/in/eliasalsteus/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a>
         <a href="https://github.com/EliasAlsteus" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.8 18.3 5.1 18.3 5.1c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
         </a>
@@ -594,6 +596,7 @@ footer .mono{font-family:var(--mono)}
       <a href="mailto:elias.alsteus@gmail.com" class="btn magnetic">elias.alsteus@gmail.com</a>
       <div class="contact-meta">
         <a href="tel:+46763217830">+46 76 321 78 30</a>
+        <a href="https://www.linkedin.com/in/eliasalsteus/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/EliasAlsteus" target="_blank" rel="noopener">GitHub</a>
         <a href="Elias-Alsteus-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
       </div>
