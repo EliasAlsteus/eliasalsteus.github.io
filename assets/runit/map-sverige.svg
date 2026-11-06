@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 500" width="240" height="500">
+  <title>RunIt — Sverigekartan med flaggan (Treriksröset → Malmö)</title>
+  <desc>Vektorkarta för tryck: svensk flagga klippt i landets form, rutten och de 14 milstolparna.</desc>
+
+  <defs>
+    <clipPath id="sverige-form">
+      <path d="M 163,27 L 184,43 L 213,72 L 215,109 L 187,139 L 163,199 L 121,242 L 117,268 L 124,301 L 141,331 L 149,341 L 139,358 L 113,374 L 109,401 L 104,427 L 83,460 L 73,467 L 56,478 L 50,480 L 46,477 L 48,470 L 46,440 L 37,424 L 36,401 L 31,381 L 29,361 L 31,354 L 34,344 L 31,331 L 44,305 L 50,291 L 60,258 L 70,242 L 73,218 L 70,199 L 73,185 L 77,159 L 89,132 L 99,109 L 106,93 L 117,76 L 130,60 L 134,43 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- SVENSKA FLAGGAN, klippt i landets form (samma proportioner som i appen) -->
+  <g clip-path="url(#sverige-form)">
+    <rect x="0" y="0" width="240" height="500" fill="#006AA7" />
+    <rect x="68" y="0" width="32" height="500" fill="#FECC02" />
+    <rect x="0" y="193" width="240" height="28" fill="#FECC02" />
+  </g>
+
+  <!-- Kontur -->
+  <path
+    d="M 163,27 L 184,43 L 213,72 L 215,109 L 187,139 L 163,199 L 121,242 L 117,268 L 124,301 L 141,331 L 149,341 L 139,358 L 113,374 L 109,401 L 104,427 L 83,460 L 73,467 L 56,478 L 50,480 L 46,477 L 48,470 L 46,440 L 37,424 L 36,401 L 31,381 L 29,361 L 31,354 L 34,344 L 31,331 L 44,305 L 50,291 L 60,258 L 70,242 L 73,218 L 70,199 L 73,185 L 77,159 L 89,132 L 99,109 L 106,93 L 117,76 L 130,60 L 134,43 Z"
+    fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"
+  />
+
+  <!-- Rutten Treriksröset → Malmö -->
+  <polyline
+    points="156,41 159,64 186,140 159,198 117,245 115,295 122,329 128,347 101,371 93,380 72,398 61,408 51,455 56,470"
+    fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"
+  />
+
+  <!-- De 14 milstolparna -->
+  <g fill="#ffffff" stroke="#0a0c11" stroke-width="1">
+    <circle cx="156" cy="41" r="5" /><circle cx="159" cy="64" r="5" /><circle cx="186" cy="140" r="5" />
+    <circle cx="159" cy="198" r="5" /><circle cx="117" cy="245" r="5" /><circle cx="115" cy="295" r="5" />
+    <circle cx="122" cy="329" r="5" /><circle cx="128" cy="347" r="5" /><circle cx="101" cy="371" r="5" />
+    <circle cx="93" cy="380" r="5" /><circle cx="72" cy="398" r="5" /><circle cx="61" cy="408" r="5" />
+    <circle cx="51" cy="455" r="5" /><circle cx="56" cy="470" r="5" />
+  </g>
+</svg>

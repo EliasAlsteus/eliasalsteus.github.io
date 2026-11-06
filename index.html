@@ -7,7 +7,7 @@
 <meta name="description" content="Elias Alstéus, M.Sc. Mechanical Engineering student at Linköping University. Builder of RunIt, a running app live on the App Store and Google Play.">
 <meta property="og:title" content="Elias Alstéus · Mechanical Engineering Student &amp; Builder of RunIt">
 <meta property="og:description" content="Mechanical engineering student who builds things in steel and code. Creator of RunIt, a social running app on the App Store and Google Play.">
-<meta property="og:image" content="https://eliasalsteus.github.io/assets/runit/map-sverige.png">
+<meta property="og:image" content="https://eliasalsteus.github.io/assets/runit/karta.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C3A44'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' fill='%235FD0C5' text-anchor='middle'%3EEA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,8 +235,8 @@ h2 em{color:var(--accent);font-style:normal}
 .maps{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;margin-bottom:80px}
 .map{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-soft);background:var(--surface);height:440px}
 .map img{width:100%;height:100%;object-fit:cover}
-.map.contain{background:#F7FAFC}
-.map.contain img{object-fit:contain;padding:20px}
+.map.contain{background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(0,106,167,.28),transparent 70%),#061a21}
+.map.contain img{object-fit:contain;padding:28px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.45))}
 .map figcaption{position:absolute;left:16px;bottom:16px;padding:10px 14px;border-radius:12px;
   background:rgba(8,41,48,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
   font-size:.82rem;color:var(--foam)}
@@ -435,7 +435,7 @@ footer .mono{font-family:var(--mono)}
 
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow fade-in">Linköping University · on exchange in Taiwan</p>
+      <p class="eyebrow fade-in">Linköping University · Sweden</p>
       <h1>
         <span class="mask"><span>Mechanical</span></span>
         <span class="mask"><span>Engineering</span></span>
@@ -544,7 +544,7 @@ footer .mono{font-family:var(--mono)}
     </div>
 
     <div class="maps">
-      <figure class="map contain reveal"><img src="assets/runit/map-sverige.png" alt="Hand-drawn map of Sweden used for the Treriksröset to Malmö adventure" loading="lazy"><figcaption><small>Sweden, top to toe</small>1 900 km from Treriksröset to Malmö</figcaption></figure>
+      <figure class="map contain reveal"><img src="assets/runit/map-sverige.svg" alt="Map of Sweden in the colours of the flag, with the route and 14 milestones from Treriksröset to Malmö" loading="lazy"><figcaption><small>Sweden, top to toe</small>1 900 km from Treriksröset to Malmö</figcaption></figure>
       <figure class="map reveal" style="--d:.1s"><img src="assets/runit/map-muren.png" alt="Map of the Great Wall of China adventure from the Bohai Sea to Badaling" loading="lazy"><figcaption><small>The Great Wall</small>462 km from the Bohai Sea to Badaling</figcaption></figure>
     </div>
 
@@ -563,7 +563,7 @@ footer .mono{font-family:var(--mono)}
         <div class="j-item done"><span class="t-date">10 Aug 2026</span><h4>Live on the App Store</h4><p>Native iOS app with Apple Health sync, approved on the fourth submission.</p></div>
         <div class="j-item done"><span class="t-date">11 Aug 2026</span><h4>Leagues released</h4><p>Weekly stages, points and cups. Four leagues created by users the same evening.</p></div>
         <div class="j-item done"><span class="t-date">Sep 2026</span><h4>Android, built blind</h4><p>Health Connect plugin in Kotlin and a Play build via CI, written without owning an Android phone.</p></div>
-        <div class="j-item done"><span class="t-date">1 Nov 2026</span><h4>Public on Google Play</h4><p>Same app, both stores. Shipped from Japan during a study break.</p></div>
+        <div class="j-item done"><span class="t-date">1 Nov 2026</span><h4>Public on Google Play</h4><p>Same app, both stores. Health Connect sync and a Play listing with the same adventures.</p></div>
         <div class="j-item"><span class="t-date">Next</span><h4>Winter season and company routes</h4><p>A seasonal pass over the winter, and routes between a company's own offices as the first paid product.</p></div>
       </div>
     </div>
@@ -621,7 +621,7 @@ footer .mono{font-family:var(--mono)}
       <div class="t-item reveal">
         <span class="t-date">Jul 2026 · now</span>
         <h3>Founder &amp; Developer, RunIt</h3>
-        <p class="t-place">Own project · Linköping and Taiwan</p>
+        <p class="t-place">Own project · Linköping</p>
         <p>Designing, building and running a social running app on iOS, Android and web. Product, code, store listings, support and analytics, all solo.</p>
       </div>
       <div class="t-item reveal">
@@ -660,9 +660,9 @@ footer .mono{font-family:var(--mono)}
           <p>Linköping University, specializing in Production Engineering. Master's profile: Logistics &amp; Supply Chain Management.</p>
         </div>
         <div class="edu-item reveal" style="--d:.1s">
-          <span class="t-date">Fall 2026 · now</span>
+          <span class="t-date">Fall 2026</span>
           <h3>Exchange Semester, Taiwan</h3>
-          <p>National Yang Ming Chiao Tung University, Hsinchu. Courses in systems engineering, heuristics and soft robotics.</p>
+          <p>National Yang Ming Chiao Tung University. International studies focused on mechanical engineering and industrial management.</p>
         </div>
         <div class="edu-item reveal" style="--d:.2s">
           <span class="t-date">2018 · 2021</span>
