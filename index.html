@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elias Alstéus — Mechanical Engineering Student & Builder</title>
-<meta name="description" content="Elias Alstéus — M.Sc. Mechanical Engineering student at Linköping University. Still learning by building things in steel and code.">
+<title>Elias Alstéus · Mechanical Engineering Student &amp; Builder of RunIt</title>
+<meta name="description" content="Elias Alstéus, M.Sc. Mechanical Engineering student at Linköping University. Builder of RunIt, a running app live on the App Store and Google Play.">
+<meta property="og:title" content="Elias Alstéus · Mechanical Engineering Student &amp; Builder of RunIt">
+<meta property="og:description" content="Mechanical engineering student who builds things in steel and code. Creator of RunIt, a social running app on the App Store and Google Play.">
+<meta property="og:image" content="https://eliasalsteus.github.io/assets/runit/map-sverige.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C3A44'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' fill='%235FD0C5' text-anchor='middle'%3EEA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +34,7 @@
   --foam:#EAF3F2;
   --sand:#D8B679;
   --ember:#E08A5B;
+  --runit:#4ADE80;
   --display:"Anton",Impact,sans-serif;
   --serif:"Instrument Serif",Georgia,serif;
   --sans:"Inter",system-ui,sans-serif;
@@ -50,6 +54,7 @@ body{
 }
 ::selection{background:var(--accent);color:#062227}
 a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
 
 /* ---------- scroll progress ---------- */
@@ -90,7 +95,6 @@ header{
     radial-gradient(ellipse at 78% 30%,rgba(14,70,85,.9),transparent 60%),
     linear-gradient(160deg,var(--bg3) 0%,var(--bg2) 42%,var(--bg) 100%);
 }
-/* foam / water on the left edge */
 .ocean{position:absolute;inset:0;z-index:0;pointer-events:none}
 .ocean .foam{
   position:absolute;top:0;bottom:0;left:0;width:34%;
@@ -111,7 +115,7 @@ header{
 .hero-grid{position:relative;z-index:2;width:100%;flex:1;display:grid;grid-template-columns:1fr auto;align-items:center;align-content:center;gap:40px}
 .hero-copy{max-width:560px}
 .eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:38px;height:1.5px;background:var(--accent)}
+.eyebrow::before{content:"";width:38px;height:1.5px;background:var(--accent);flex:none}
 .hero-copy h1{
   font-family:var(--serif);font-weight:400;
   font-size:clamp(2.6rem,5.4vw,4.4rem);
@@ -128,9 +132,9 @@ header{
 .fade-in.d1{animation-delay:.5s}.fade-in.d2{animation-delay:.7s}.fade-in.d3{animation-delay:.9s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 .hero-sub{color:var(--muted);font-size:1.06rem;max-width:520px}
+.hero-sub a{color:var(--foam);border-bottom:1px solid var(--accent)}
 .hero-cta{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
 
-/* big display type on the right */
 .hero-display{
   font-family:"Bropella",var(--display);
   font-size:clamp(4rem,12vw,11rem);
@@ -145,12 +149,10 @@ header{
   background:linear-gradient(180deg,#EAF3F2,#8FCFC8 70%,#37B0A6);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.hero-display .amp{color:var(--accent);-webkit-text-stroke:0;font-size:.7em}
 .dw{transform:translateX(60px);opacity:0;animation:slideIn 1.1s var(--ease) forwards}
-.dw.d1{animation-delay:.15s}.dw.d2{animation-delay:.3s}.dw.d3{animation-delay:.45s}
+.dw.d1{animation-delay:.15s}.dw.d2{animation-delay:.3s}
 @keyframes slideIn{to{transform:none;opacity:1}}
 
-/* hero footer row: counter + socials */
 .hero-foot{position:relative;z-index:2;padding:28px 0 34px}
 .hero-foot .wrap{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
 .counter{font-family:var(--display);font-size:2.4rem;color:var(--foam);letter-spacing:.02em;line-height:1}
@@ -182,6 +184,78 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,5.5vw,4rem)
 h2 em{color:var(--accent);font-style:normal}
 .sec-num{font-family:var(--mono);font-size:.78rem;color:var(--faint);letter-spacing:.18em}
 
+/* ---------- RunIt ---------- */
+#runit{position:relative;overflow:hidden}
+#runit::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 40% at 80% 10%,rgba(74,222,128,.08),transparent 70%)}
+.runit-lead{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:start;margin-bottom:72px}
+.runit-logo{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.runit-logo img{width:64px;height:64px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.runit-logo .status{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+.runit-logo .status .dot{width:7px;height:7px;border-radius:50%;background:var(--runit);box-shadow:0 0 0 0 rgba(74,222,128,.5);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.45)}70%{box-shadow:0 0 0 9px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+.runit-text .runit-tagline{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.25;color:var(--foam);margin-bottom:22px}
+.runit-text .runit-tagline em{color:var(--runit);font-style:italic}
+.runit-text p{color:var(--muted);font-size:1rem;margin-bottom:16px;max-width:560px}
+.runit-text p strong{color:var(--foam);font-weight:500}
+.store-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.store{
+  display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:12px;
+  border:1px solid var(--line);background:var(--surface);color:var(--foam);
+  font-size:.85rem;font-weight:500;transition:border-color .3s,background .3s,transform .3s var(--ease);
+}
+.store:hover{border-color:var(--runit);background:rgba(74,222,128,.08);transform:translateY(-2px)}
+.store svg{width:18px;height:18px;flex:none}
+.store small{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.1}
+.store b{display:block;font-weight:500;line-height:1.2}
+
+.runit-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rfact{background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;padding:22px}
+.rfact b{display:block;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1;color:var(--foam)}
+.rfact b .unit{color:var(--runit);font-size:1.2rem}
+.rfact span{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-top:8px;line-height:1.5}
+
+.phones{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:28px}
+.phone{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);background:#0a0d10;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.7);transition:transform .5s var(--ease),border-color .4s}
+.phone:hover{transform:translateY(-8px);border-color:var(--runit)}
+.phone img{width:100%;height:auto}
+.phone figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 14px;
+  background:linear-gradient(180deg,transparent,rgba(5,8,10,.92));
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--foam)}
+.phones-note{font-family:var(--mono);font-size:.72rem;color:var(--faint);letter-spacing:.06em;margin-bottom:80px}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:80px}
+.feature{background:var(--surface);border:1px solid var(--line-soft);border-radius:18px;padding:28px;transition:border-color .3s,background .3s,transform .4s var(--ease)}
+.feature:hover{border-color:var(--line);background:var(--surface-2);transform:translateY(-4px)}
+.feature .num{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--runit);margin-bottom:14px;display:block}
+.feature h4{font-family:var(--serif);font-weight:400;font-size:1.4rem;color:var(--foam);margin-bottom:8px;line-height:1.2}
+.feature p{color:var(--muted);font-size:.9rem}
+
+.maps{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;margin-bottom:80px}
+.map{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-soft);background:var(--surface);height:440px}
+.map img{width:100%;height:100%;object-fit:cover}
+.map.contain{background:#F7FAFC}
+.map.contain img{object-fit:contain;padding:20px}
+.map figcaption{position:absolute;left:16px;bottom:16px;padding:10px 14px;border-radius:12px;
+  background:rgba(8,41,48,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+  font-size:.82rem;color:var(--foam)}
+.map figcaption small{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+
+.build{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.build h3{font-family:var(--serif);font-weight:400;font-size:1.9rem;color:var(--foam);margin-bottom:14px}
+.build p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.build .chips{margin-top:20px}
+.journey{position:relative;padding-left:28px}
+.journey::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1.5px;background:var(--line)}
+.j-item{position:relative;padding-bottom:26px}
+.j-item:last-child{padding-bottom:0}
+.j-item::before{content:"";position:absolute;left:-28px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--runit)}
+.j-item.done::before{background:var(--runit)}
+.j-item .t-date{color:var(--runit)}
+.j-item h4{font-size:1rem;font-weight:500;color:var(--foam);margin-top:2px}
+.j-item p{color:var(--muted);font-size:.88rem;margin:2px 0 0}
+
 /* ---------- projects ---------- */
 .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .card{
@@ -192,12 +266,10 @@ h2 em{color:var(--accent);font-style:normal}
   display:flex;flex-direction:column;
 }
 .card:hover{background:var(--surface-2);box-shadow:0 30px 70px -30px rgba(0,0,0,.55);border-color:var(--line)}
-.card.featured{grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .card .status{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;color:var(--muted);margin-bottom:20px}
 .card .status .dot{width:7px;height:7px;border-radius:50%;background:var(--sand)}
-.card .status.live .dot{background:var(--accent);box-shadow:0 0 0 0 rgba(95,208,197,.5);animation:pulse 2.2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(95,208,197,.45)}70%{box-shadow:0 0 0 9px rgba(95,208,197,0)}100%{box-shadow:0 0 0 0 rgba(95,208,197,0)}}
-.card h3{font-family:var(--serif);font-weight:400;font-size:2.1rem;line-height:1.1;margin-bottom:6px;color:var(--foam)}
+.card .status.live .dot{background:var(--accent)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:2rem;line-height:1.1;margin-bottom:6px;color:var(--foam)}
 .card .role{font-family:var(--mono);font-size:.76rem;color:var(--accent);letter-spacing:.06em;margin-bottom:18px}
 .card p{color:var(--muted);font-size:.95rem;flex:1}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
@@ -205,13 +277,6 @@ h2 em{color:var(--accent);font-style:normal}
 .card-link{margin-top:26px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
 .card-link .arrow{transition:transform .35s var(--ease)}
 .card:hover .card-link .arrow{transform:translateX(6px)}
-.card-visual{
-  border-radius:14px;min-height:260px;position:relative;overflow:hidden;
-  background:linear-gradient(135deg,rgba(95,208,197,.12),rgba(14,70,85,.35));
-  border:1px solid var(--line-soft);
-  display:flex;align-items:center;justify-content:center;
-}
-.card-visual svg{width:82%;height:auto}
 
 /* ---------- marquee ---------- */
 .marquee{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);overflow:hidden;padding:24px 0;background:var(--surface)}
@@ -288,11 +353,18 @@ footer .mono{font-family:var(--mono)}
 .reveal.in{opacity:1;transform:none}
 
 /* ---------- responsive ---------- */
+@media(max-width:1100px){
+  .phones{grid-template-columns:repeat(3,1fr)}
+  .phone:nth-child(n+4){display:none}
+}
 @media(max-width:960px){
   .hero-grid{grid-template-columns:1fr;gap:8px}
   .hero-display{text-align:left;order:-1;font-size:clamp(3rem,15vw,6rem);margin-bottom:8px}
   .ocean svg{width:70%;opacity:.6}
   .ocean .foam{width:60%}
+  .runit-lead{grid-template-columns:1fr;gap:36px}
+  .features{grid-template-columns:1fr 1fr}
+  .build{grid-template-columns:1fr;gap:48px}
 }
 @media(max-width:900px){
   .stats-grid{grid-template-columns:repeat(2,1fr)}
@@ -300,16 +372,28 @@ footer .mono{font-family:var(--mono)}
   .stat{border-top:1px solid var(--line-soft)}
   .stat:nth-child(1),.stat:nth-child(2){border-top:none}
   .projects-grid{grid-template-columns:1fr}
-  .card.featured{grid-template-columns:1fr}
   .two-col{grid-template-columns:1fr;gap:56px}
   .about-facts{grid-template-columns:1fr}
   .contact{padding:64px 28px}
   .nav-links a:not(.btn){display:none}
   .hero-foot .counter small{display:none}
+  .maps{grid-template-columns:1fr}
+  .map{height:360px}
+}
+@media(max-width:640px){
+  .phones{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:10px;margin-left:-28px;margin-right:-28px;padding-left:28px;padding-right:28px;scrollbar-width:none}
+  .phones::-webkit-scrollbar{display:none}
+  .phone{flex:0 0 68%;scroll-snap-align:center}
+  .phone:nth-child(n+4){display:block}
+  .features{grid-template-columns:1fr}
+  .runit-facts{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
   .hero-foot{position:static;margin-top:40px;padding-bottom:32px}
-  header{min-height:auto;padding-top:40px}
+  .hero-foot .wrap{flex-wrap:wrap;gap:22px}
+  .counter{font-size:1.9rem}
+  header{min-height:auto;padding-top:96px}
+  section{padding:88px 0}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -328,7 +412,8 @@ footer .mono{font-family:var(--mono)}
   <div class="nav-inner">
     <a href="#top" class="logo">Elias <em>Alstéus</em></a>
     <div class="nav-links">
-      <a href="#work">Work</a>
+      <a href="#runit">RunIt</a>
+      <a href="#work">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#about">About</a>
       <a href="Elias-Alsteus-CV.pdf" target="_blank" rel="noopener">CV</a>
@@ -350,15 +435,15 @@ footer .mono{font-family:var(--mono)}
 
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow fade-in">Linköping University · Sweden</p>
+      <p class="eyebrow fade-in">Linköping University · on exchange in Taiwan</p>
       <h1>
         <span class="mask"><span>Mechanical</span></span>
         <span class="mask"><span>Engineering</span></span>
         <span class="mask"><span><span class="accent">Student</span></span></span>
       </h1>
-      <p class="hero-sub fade-in d1">Mechanical engineering student based in Linköping, Sweden. I split my time between the workshop and the code editor — designing and building things across steel and software, from a firefighting robot's control system to a few web apps of my own.</p>
+      <p class="hero-sub fade-in d1">I build things in steel and code. Since summer 2026 most of my evenings have gone into <a href="#runit">RunIt</a>, a social running app I designed, built and shipped on my own to the App Store and Google Play. Before that I helped build the control system of a firefighting robot.</p>
       <div class="hero-cta fade-in d2">
-        <a href="#work" class="btn magnetic">See what I've tried ↓</a>
+        <a href="#runit" class="btn magnetic">See RunIt ↓</a>
         <a href="Elias-Alsteus-CV.pdf" target="_blank" rel="noopener" class="btn ghost magnetic">Download CV</a>
       </div>
     </div>
@@ -371,7 +456,7 @@ footer .mono{font-family:var(--mono)}
 
   <div class="hero-foot fade-in d3">
     <div class="wrap">
-      <div class="counter">01<span class="sep">/</span><span class="tot">04</span><small>Student · Builder · Learner</small></div>
+      <div class="counter">M.Sc<span class="sep">/</span><span class="tot">2028</span><small>Student · Builder · Runner</small></div>
       <div class="socials">
         <a href="https://www.linkedin.com/in/eliasalsteus/" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
@@ -392,90 +477,126 @@ footer .mono{font-family:var(--mono)}
 
 <div class="stats">
   <div class="stats-grid">
-    <div class="stat reveal"><b><span data-count="3">0</span></b><span>Small web apps built</span></div>
-    <div class="stat reveal" style="--d:.1s"><b><span data-count="300">0</span><span class="unit">+m</span></b><span>Robot control range</span></div>
-    <div class="stat reveal" style="--d:.2s"><b><span data-count="18">0</span></b><span>Person project team</span></div>
-    <div class="stat reveal" style="--d:.3s"><b><span data-count="4">0</span><span class="unit">yrs</span></b><span>Technical sales</span></div>
+    <div class="stat reveal"><b><span data-count="2">0</span></b><span>App stores, iOS + Android</span></div>
+    <div class="stat reveal" style="--d:.1s"><b><span data-count="10">0</span><span class="unit">+</span></b><span>Adventures to run</span></div>
+    <div class="stat reveal" style="--d:.2s"><b><span data-count="1600">0</span><span class="unit">+</span></b><span>Commits since July 2026</span></div>
+    <div class="stat reveal" style="--d:.3s"><b><span data-count="68">0</span><span class="unit">%</span></b><span>Users still active after 30 days</span></div>
   </div>
 </div>
 
-<section id="work">
+<section id="runit">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Things I've <em>tried</em></h2>
-      <span class="sec-num">01 — Projects</span>
+      <h2>Run<em>It</em></h2>
+      <span class="sec-num">01 · The main project</span>
+    </div>
+
+    <div class="runit-lead">
+      <div class="runit-text reveal">
+        <div class="runit-logo">
+          <img src="assets/runit/icon.png" alt="RunIt app icon" width="64" height="64">
+          <span class="status"><span class="dot"></span>Live on the App Store and Google Play</span>
+        </div>
+        <p class="runit-tagline">Your everyday runs become <em>an adventure</em>.</p>
+        <p>RunIt takes the kilometers you already log and moves you along a route on a map: the length of Sweden, around Taiwan, along the Great Wall of China or across the Bering Strait. Friends join the same adventure and move together, milestones pop up with a photo and a short story, and a league lets a group race week by week.</p>
+        <p>Workouts arrive automatically from <strong>Apple Health</strong> and <strong>Health Connect</strong>, so an Apple Watch, Garmin or Polar all count. Only real, logged workouts move you forward. No manual entry, no cheating.</p>
+        <p>I built it alone, from the first database table to App Store review, while studying full time. Designed in Swedish for my own friends first, and they are still the most active users.</p>
+        <div class="store-row">
+          <a class="store" href="https://apps.apple.com/app/id6792135588" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.63c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.24 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.14-2.52.99-1.45 1.4-2.86 1.42-2.93-.03-.01-2.72-1.04-2.74-4.12ZM13.78 5c.72-.87 1.2-2.08 1.07-3.29-1.03.04-2.29.69-3.03 1.56-.66.77-1.25 2-1.09 3.18 1.15.09 2.33-.58 3.05-1.45Z"/></svg>
+            <span><small>Download on the</small><b>App Store</b></span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=se.runit.app" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3c-.3.3-.4.7-.4 1.2v17c0 .5.1.9.4 1.2l.1.1 9.5-9.5v-.2L3.7 2.2l-.1.1Zm12.8 12.7-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.1c1.1.6 1.1 1.6 0 2.2l-3.8 2.2h-.1Zm-.1-.1L13 11.6l-9.3 9.4c.4.4.9.4 1.6 0l11-6.1ZM5.3 3l11 6.1L13 11.6 3.7 2.3c.6-.4 1.2-.4 1.6.7Z"/></svg>
+            <span><small>Get it on</small><b>Google Play</b></span>
+          </a>
+          <a class="store" href="https://runitapp.se/om" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
+            <span><small>How it works</small><b>runitapp.se</b></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="runit-facts reveal" style="--d:.15s">
+        <div class="rfact"><b>Jul<span class="unit"> 2026</span></b><span>Rebuilt from scratch, first friends on board</span></div>
+        <div class="rfact"><b>10<span class="unit"> Aug</span></b><span>Live on the App Store, after three rejections</span></div>
+        <div class="rfact"><b>1<span class="unit"> Nov</span></b><span>Public on Google Play</span></div>
+        <div class="rfact"><b>1<span class="unit"> codebase</span></b><span>Web, iOS and Android from the same Next.js app</span></div>
+      </div>
+    </div>
+
+    <div class="phones reveal">
+      <figure class="phone"><img src="assets/runit/karta.webp" alt="RunIt adventure map with the group moving along the route through Sweden" loading="lazy"><figcaption>The adventure map</figcaption></figure>
+      <figure class="phone"><img src="assets/runit/milstolpe.webp" alt="A milestone card in RunIt showing Luleå with a photo and story" loading="lazy"><figcaption>A milestone, unlocked</figcaption></figure>
+      <figure class="phone"><img src="assets/runit/ligan.webp" alt="RunIt league view with weekly points and the weekly pledge" loading="lazy"><figcaption>The league, week by week</figcaption></figure>
+      <figure class="phone"><img src="assets/runit/topplista.webp" alt="RunIt leaderboard with a podium of three friends" loading="lazy"><figcaption>Leaderboard and podium</figcaption></figure>
+      <figure class="phone"><img src="assets/runit/garderob.webp" alt="RunIt wardrobe with outfits for the map character" loading="lazy"><figcaption>The wardrobe</figcaption></figure>
+    </div>
+    <p class="phones-note reveal">Screenshots from a demo account. The app is in Swedish.</p>
+
+    <div class="features">
+      <div class="feature reveal"><span class="num">01</span><h4>Adventures on real and imagined maps</h4><p>Over ten routes, each with its own map art, theme and milestones. Every milestone has a photo and a short story that pops up when the group passes it.</p></div>
+      <div class="feature reveal" style="--d:.05s"><span class="num">02</span><h4>Together, solo or versus</h4><p>Run toward a shared goal, keep a private adventure for yourself, or race head to head, everyone against everyone or team against team.</p></div>
+      <div class="feature reveal" style="--d:.1s"><span class="num">03</span><h4>Leagues and cups</h4><p>Fixed time, open distance. Weekly stages with points, captain multipliers, a weekly pledge you can win or lose, and a knockout cup.</p></div>
+      <div class="feature reveal" style="--d:.15s"><span class="num">04</span><h4>Automatic sync, no cheating</h4><p>Native plugins read Apple Health on iOS and Health Connect on Android, so any watch counts. Only logged workouts from a real source move you forward, never manual entries.</p></div>
+      <div class="feature reveal" style="--d:.2s"><span class="num">05</span><h4>A character and a wardrobe</h4><p>Everyone is a little figure on the map. Outfits are earned by running, never bought, and seasonal passes add levels to unlock.</p></div>
+      <div class="feature reveal" style="--d:.25s"><span class="num">06</span><h4>Built to spread in group chats</h4><p>Every adventure link renders its own share card with the route and progress. Invite links, push notifications and email digests keep the group moving.</p></div>
+    </div>
+
+    <div class="maps">
+      <figure class="map contain reveal"><img src="assets/runit/map-sverige.png" alt="Hand-drawn map of Sweden used for the Treriksröset to Malmö adventure" loading="lazy"><figcaption><small>Sweden, top to toe</small>1 900 km from Treriksröset to Malmö</figcaption></figure>
+      <figure class="map reveal" style="--d:.1s"><img src="assets/runit/map-muren.png" alt="Map of the Great Wall of China adventure from the Bohai Sea to Badaling" loading="lazy"><figcaption><small>The Great Wall</small>462 km from the Bohai Sea to Badaling</figcaption></figure>
+    </div>
+
+    <div class="build">
+      <div class="reveal">
+        <h3>How it's built</h3>
+        <p>One Next.js app on Vercel does everything: the web app, the API and the pages people share. Capacitor wraps the same code for the App Store and Google Play, and two small native plugins in Swift and Kotlin read Apple Health and Health Connect.</p>
+        <p>Prisma and a PostgreSQL database hold adventures, workouts, leagues and milestones. Push notifications, transactional email, Open Graph image generation, an admin panel with usage analytics and a seasonal pass system are all part of the same codebase.</p>
+        <p>I also wrote the maps, the milestone stories and the App Store listing, handled Apple's review three times over, and measure retention with my own scripts against production.</p>
+        <div class="chips">
+          <span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Prisma 7</span><span class="chip">PostgreSQL (Neon)</span><span class="chip">Tailwind 4</span><span class="chip">Capacitor</span><span class="chip">Swift · HealthKit</span><span class="chip">Kotlin · Health Connect</span><span class="chip">Vercel</span><span class="chip">Web Push</span><span class="chip">Codemagic CI</span>
+        </div>
+      </div>
+      <div class="journey reveal" style="--d:.1s">
+        <div class="j-item done"><span class="t-date">Jul 2026</span><h4>Rebuilt from scratch</h4><p>New design, new data model, first adventures. Friends start running the length of Sweden together.</p></div>
+        <div class="j-item done"><span class="t-date">10 Aug 2026</span><h4>Live on the App Store</h4><p>Native iOS app with Apple Health sync, approved on the fourth submission.</p></div>
+        <div class="j-item done"><span class="t-date">11 Aug 2026</span><h4>Leagues released</h4><p>Weekly stages, points and cups. Four leagues created by users the same evening.</p></div>
+        <div class="j-item done"><span class="t-date">Sep 2026</span><h4>Android, built blind</h4><p>Health Connect plugin in Kotlin and a Play build via CI, written without owning an Android phone.</p></div>
+        <div class="j-item done"><span class="t-date">1 Nov 2026</span><h4>Public on Google Play</h4><p>Same app, both stores. Shipped from Japan during a study break.</p></div>
+        <div class="j-item"><span class="t-date">Next</span><h4>Winter season and company routes</h4><p>A seasonal pass over the winter, and routes between a company's own offices as the first paid product.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Other <em>projects</em></h2>
+      <span class="sec-num">02 · Smaller things</span>
     </div>
     <div class="projects-grid">
 
-      <article class="card featured tilt reveal">
-        <div>
-          <span class="status live"><span class="dot"></span>Live in production</span>
-          <h3>RunIt</h3>
-          <p class="role">Building it solo · Full-stack</p>
-          <p>A social fitness idea I'm building: friends run, walk and cycle together along virtual routes — from a 5&nbsp;km hill climb to the 384,400&nbsp;km journey to the Moon. Kilometers sync automatically from Strava and move the whole group across an animated map. Still rough in places, but it's live and people actually use it.</p>
-          <div class="tags">
-            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Strava API</span><span class="tag">Vercel</span>
-          </div>
-          <a class="card-link" href="https://runit-omega.vercel.app" target="_blank" rel="noopener">Visit RunIt <span class="arrow">→</span></a>
-        </div>
-        <div class="card-visual">
-          <svg viewBox="0 0 300 190" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 160 C60 150 70 120 100 110 S150 130 180 95 S240 60 280 40" stroke="#5FD0C5" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 10"/>
-            <circle cx="20" cy="160" r="8" fill="#5FD0C5"/>
-            <circle cx="100" cy="110" r="5" fill="#D8B679"/>
-            <circle cx="180" cy="95" r="5" fill="#D8B679"/>
-            <circle cx="280" cy="40" r="10" fill="none" stroke="#5FD0C5" stroke-width="3"/>
-            <circle cx="280" cy="40" r="3.5" fill="#5FD0C5"/>
-            <text x="34" y="150" font-family="DM Mono,monospace" font-size="10" fill="#93B2B2">START</text>
-            <text x="238" y="30" font-family="DM Mono,monospace" font-size="10" fill="#93B2B2">GOAL</text>
-          </svg>
-        </div>
-      </article>
-
       <article class="card tilt reveal">
-        <span class="status"><span class="dot"></span>In development</span>
-        <h3>HantverkarSchemat</h3>
-        <p class="role">Early idea · Product &amp; development</p>
-        <p>An attempt at smart scheduling for tradespeople. Jobs are entered with location and customer priority, and the app plans each workday as an optimized driving route — turn-by-turn directions and realistic travel times through maps integration. Very much a work in progress.</p>
+        <span class="status"><span class="dot"></span>Bachelor thesis · 2026</span>
+        <h3>Fire Robot Helios 3.0</h3>
+        <p class="role">Control systems · 18-person team</p>
+        <p>An autonomous firefighting robot meant to enter buildings that are unsafe for firefighters. I worked on the remote control system: reliable operation at 300+ meters with a live camera feed to a handheld unit. Plenty of testing, failing and redesigning across six sub-groups.</p>
         <div class="tags">
-          <span class="tag">Route optimization</span><span class="tag">Maps API</span><span class="tag">Web app</span>
+          <span class="tag">Arduino</span><span class="tag">C++</span><span class="tag">Motor drivers</span><span class="tag">Testing &amp; validation</span>
         </div>
       </article>
 
       <article class="card tilt reveal" style="--d:.1s">
         <span class="status live"><span class="dot"></span>Live</span>
         <h3>UniMatchr</h3>
-        <p class="role">Small side project · Design &amp; dev</p>
-        <p>A simple matching site to help freemover students find a university abroad. Filter by subject, continent, country, teaching language, tuition and deadlines — data comes from a live spreadsheet so it's easy to keep up to date. Nothing fancy, but it works.</p>
+        <p class="role">Side project · Design &amp; dev</p>
+        <p>A small matching site that helps freemover students find a university abroad. Filter by subject, country, language, tuition and deadlines. The data lives in a spreadsheet so it is easy to keep up to date.</p>
         <div class="tags">
-          <span class="tag">Vanilla JS</span><span class="tag">GitHub Pages</span><span class="tag">Google Sheets CMS</span>
+          <span class="tag">Vanilla JS</span><span class="tag">GitHub Pages</span><span class="tag">Google Sheets</span>
         </div>
         <a class="card-link" href="https://eliasalsteus.github.io/freemover_test/" target="_blank" rel="noopener">Visit UniMatchr <span class="arrow">→</span></a>
-      </article>
-
-      <article class="card featured tilt reveal">
-        <div>
-          <span class="status"><span class="dot"></span>Bachelor thesis · 2026</span>
-          <h3>Fire Robot Helios 3.0</h3>
-          <p class="role">Control systems · 18-person team</p>
-          <p>Helios is an autonomous firefighting robot meant to enter burning buildings that are unsafe for firefighters. I'm helping build the remote control system — aiming for reliable operation at 300+&nbsp;meters with a live camera feed to a handheld unit — alongside plenty of testing, failing and redesigning across six sub-groups. Learning a lot from the parts that don't work yet.</p>
-          <div class="tags">
-            <span class="tag">Arduino</span><span class="tag">C++</span><span class="tag">Motor drivers</span><span class="tag">Control systems</span><span class="tag">Testing &amp; validation</span>
-          </div>
-        </div>
-        <div class="card-visual">
-          <svg viewBox="0 0 300 190" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="90" y="95" width="120" height="50" rx="10" stroke="#5FD0C5" stroke-width="3"/>
-            <circle cx="115" cy="155" r="16" stroke="#5FD0C5" stroke-width="3"/>
-            <circle cx="185" cy="155" r="16" stroke="#5FD0C5" stroke-width="3"/>
-            <rect x="130" y="70" width="40" height="25" rx="6" stroke="#5FD0C5" stroke-width="3"/>
-            <line x1="150" y1="70" x2="150" y2="52" stroke="#5FD0C5" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="150" cy="46" r="5" fill="#D8B679"/>
-            <path d="M228 118 q14 0 14 -14 M228 130 q26 0 26 -26 M228 142 q38 0 38 -38" stroke="#D8B679" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <path d="M52 40 q8 14 0 24 q-8 10 0 22" stroke="#E08A5B" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <path d="M68 34 q10 16 0 28 q-10 12 0 26" stroke="#E08A5B" stroke-width="3" stroke-linecap="round" fill="none" opacity=".6"/>
-          </svg>
-        </div>
       </article>
 
     </div>
@@ -484,8 +605,8 @@ footer .mono{font-family:var(--mono)}
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>SolidWorks</span><span>Creo</span><span>Ansys</span><span>Arduino</span><span>C++</span><span>Next.js</span><span>TypeScript</span><span>Python</span><span>MATLAB</span><span>FEM Analysis</span><span>Prisma</span><span>Excel</span>
-    <span>SolidWorks</span><span>Creo</span><span>Ansys</span><span>Arduino</span><span>C++</span><span>Next.js</span><span>TypeScript</span><span>Python</span><span>MATLAB</span><span>FEM Analysis</span><span>Prisma</span><span>Excel</span>
+    <span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>Swift</span><span>Kotlin</span><span>SolidWorks</span><span>Creo</span><span>Ansys</span><span>Arduino</span><span>C++</span><span>Python</span><span>MATLAB</span><span>FEM Analysis</span>
+    <span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>Swift</span><span>Kotlin</span><span>SolidWorks</span><span>Creo</span><span>Ansys</span><span>Arduino</span><span>C++</span><span>Python</span><span>MATLAB</span><span>FEM Analysis</span>
   </div>
 </div>
 
@@ -493,33 +614,33 @@ footer .mono{font-family:var(--mono)}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Where I've <em>worked</em></h2>
-      <span class="sec-num">02 — Experience</span>
+      <span class="sec-num">03 · Experience</span>
     </div>
     <div class="timeline" id="timeline">
       <div class="track"></div>
       <div class="t-item reveal">
-        <span class="t-date">Jan 2026 — Jun 2026</span>
-        <h3>Control Systems — Fire Robot Helios 3.0</h3>
-        <p class="t-place">Linköping University · Bachelor thesis</p>
-        <p>Working on remote-control development for an autonomous firefighting robot in a 18-person team. Lots of testing, validation and reworking the control system when things don't behave.</p>
+        <span class="t-date">Jul 2026 · now</span>
+        <h3>Founder &amp; Developer, RunIt</h3>
+        <p class="t-place">Own project · Linköping and Taiwan</p>
+        <p>Designing, building and running a social running app on iOS, Android and web. Product, code, store listings, support and analytics, all solo.</p>
       </div>
       <div class="t-item reveal">
-        <span class="t-date">Jun 2021 — Aug 2025</span>
+        <span class="t-date">Jan 2026 · Jun 2026</span>
+        <h3>Control Systems, Fire Robot Helios 3.0</h3>
+        <p class="t-place">Linköping University · Bachelor thesis</p>
+        <p>Remote-control development for an autonomous firefighting robot in an 18-person team.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-date">Jun 2021 · Aug 2025</span>
         <h3>Technical Installer &amp; Sales</h3>
         <p class="t-place">Borås Markis Service AB · Borås</p>
-        <p>Sold and installed custom awning, sun-shading and outdoor screen systems. The customer's point of contact through the full project — from measurement and quoting to installation and handover, mostly working independently on-site.</p>
+        <p>Sold and installed custom awning and sun-shading systems. The customer's single point of contact from measurement and quote to installation, mostly working independently on site.</p>
       </div>
       <div class="t-item reveal">
-        <span class="t-date">Aug 2020 — Jun 2021</span>
-        <h3>Co-founder — UF Student Company</h3>
+        <span class="t-date">Aug 2020 · Jun 2021</span>
+        <h3>Co-founder, UF Student Company</h3>
         <p class="t-place">Ung Företagsamhet · Tranemo</p>
-        <p>Co-founded and ran a student company designing and selling custom socks. Owned product design and branding; shared sales, supplier contact and finances through to close-out. A first, messy taste of building something.</p>
-      </div>
-      <div class="t-item reveal">
-        <span class="t-date">2017 — 2021</span>
-        <h3>Warehouse &amp; Production / Ski Lift Operator</h3>
-        <p class="t-place">Larssons Trä AB · Isaberg Mountain Resort</p>
-        <p>Assembly-line product assembly and packing during summers; safe ski lift operation and guest assistance in winter.</p>
+        <p>Started and ran a student company designing and selling custom socks. Product design and branding, plus a share of sales, suppliers and finances.</p>
       </div>
     </div>
   </div>
@@ -529,43 +650,43 @@ footer .mono{font-family:var(--mono)}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Learning &amp; <em>skills</em></h2>
-      <span class="sec-num">03 — Background</span>
+      <span class="sec-num">04 · Background</span>
     </div>
     <div class="two-col">
       <div>
         <div class="edu-item reveal">
-          <span class="t-date">2023 — 2028</span>
+          <span class="t-date">2023 · 2028</span>
           <h3>M.Sc. Mechanical Engineering</h3>
-          <p>Linköping University — specializing in Production Engineering. Master's profile: Logistics &amp; Supply Chain Management.</p>
+          <p>Linköping University, specializing in Production Engineering. Master's profile: Logistics &amp; Supply Chain Management.</p>
         </div>
         <div class="edu-item reveal" style="--d:.1s">
-          <span class="t-date">Fall 2026</span>
-          <h3>Exchange Semester — Taiwan</h3>
-          <p>National Yang Ming Chiao Tung University. International studies focused on mechanical engineering and industrial management.</p>
+          <span class="t-date">Fall 2026 · now</span>
+          <h3>Exchange Semester, Taiwan</h3>
+          <p>National Yang Ming Chiao Tung University, Hsinchu. Courses in systems engineering, heuristics and soft robotics.</p>
         </div>
         <div class="edu-item reveal" style="--d:.2s">
-          <span class="t-date">2018 — 2021</span>
+          <span class="t-date">2018 · 2021</span>
           <h3>Technology Program</h3>
-          <p>Tranemo Gymnasieskola — Design and Product Development.</p>
+          <p>Tranemo Gymnasieskola, Design and Product Development.</p>
         </div>
       </div>
       <div>
         <div class="skill-group reveal">
+          <h4>Software</h4>
+          <div class="chips">
+            <span class="chip">Next.js / React</span><span class="chip">TypeScript</span><span class="chip">Prisma + PostgreSQL</span><span class="chip">Swift &amp; Kotlin plugins</span><span class="chip">C++ / Arduino</span><span class="chip">Python</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="--d:.1s">
           <h4>Engineering</h4>
           <div class="chips">
             <span class="chip">SolidWorks</span><span class="chip">Creo</span><span class="chip">Ansys Workbench</span><span class="chip">FEM</span><span class="chip">MATLAB</span><span class="chip">Excel (advanced)</span>
           </div>
         </div>
-        <div class="skill-group reveal" style="--d:.1s">
-          <h4>Software</h4>
-          <div class="chips">
-            <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">C++ / Arduino</span><span class="chip">Python</span><span class="chip">Prisma + PostgreSQL</span><span class="chip">Ada</span>
-          </div>
-        </div>
         <div class="skill-group reveal" style="--d:.2s">
           <h4>Languages</h4>
           <div class="chips">
-            <span class="chip">Swedish — native</span><span class="chip">English — fluent</span><span class="chip">German — basic</span>
+            <span class="chip">Swedish, native</span><span class="chip">English, fluent</span><span class="chip">German, basic</span>
           </div>
         </div>
       </div>
@@ -577,13 +698,13 @@ footer .mono{font-family:var(--mono)}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Beyond the <em>drawings</em></h2>
-      <span class="sec-num">04 — About</span>
+      <span class="sec-num">05 · About</span>
     </div>
-    <p class="about-quote reveal">I like testing limits — my own in training, and a product's in the workshop. I haven't got much figured out yet, but give me something to <em>build</em>, a team to build it with, and a deadline that scares us a little, and I'll happily learn the rest on the way.</p>
+    <p class="about-quote reveal">I like testing limits, my own in training and a product's in the workshop. Give me something to <em>build</em>, a team to build it with, and a deadline that scares us a little, and I'll learn the rest on the way.</p>
     <div class="about-facts">
       <div class="fact reveal"><span class="icon">⚽</span><h4>Team player</h4><p>Played football with Tranemo IF from youth to senior level, captain in a few matches. Teamwork and showing up came from the pitch first.</p></div>
-      <div class="fact reveal" style="--d:.1s"><span class="icon">🏋️</span><h4>Endurance &amp; strength</h4><p>Endurance sports, strength training and hiking. The same mindset applies here: measure, iterate, improve, repeat.</p></div>
-      <div class="fact reveal" style="--d:.2s"><span class="icon">🌱</span><h4>Still building</h4><p>Started my first small company at 17 through Ung Företagsamhet. The goal, one day: found and run something of my own — I'm just early on the way.</p></div>
+      <div class="fact reveal" style="--d:.1s"><span class="icon">🏃</span><h4>Runs his own app</h4><p>Endurance sports, strength training and hiking. RunIt started because my friends and I wanted a reason to run more. Now it's how we keep each other going.</p></div>
+      <div class="fact reveal" style="--d:.2s"><span class="icon">🌱</span><h4>Building toward my own thing</h4><p>Started my first company at 17 through Ung Företagsamhet. RunIt is the second attempt, and the first one with real users.</p></div>
     </div>
   </div>
 </section>
@@ -592,7 +713,7 @@ footer .mono{font-family:var(--mono)}
   <div class="wrap">
     <div class="contact reveal">
       <h2>Let's build <em style="color:var(--accent)">something.</em></h2>
-      <p>Open for summer internships in product development, sourcing, logistics or consulting — and always up for talking about a good idea, even a half-finished one.</p>
+      <p>Open for summer internships in product development, software, logistics or consulting. Always up for talking about a good idea, even a half-finished one.</p>
       <a href="mailto:elias.alsteus@gmail.com" class="btn magnetic">elias.alsteus@gmail.com</a>
       <div class="contact-meta">
         <a href="tel:+46763217830">+46 76 321 78 30</a>
@@ -621,7 +742,6 @@ function onScroll(){
   nav.classList.toggle('scrolled',y>40);
   nav.classList.toggle('hidden',y>500&&y>lastY);
   lastY=y;
-  /* timeline track */
   const tl=document.getElementById('timeline');
   if(tl){
     const r=tl.getBoundingClientRect();
@@ -643,12 +763,13 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 /* ---------- counters ---------- */
+const fmt=n=>n.toLocaleString('en-US').replace(/,/g,' ');
 const cio=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting)return;
   const el=e.target,target=+el.dataset.count,dur=1400,t0=performance.now();
   (function tick(t){
     const p=Math.min(1,(t-t0)/dur),eased=1-Math.pow(1-p,3);
-    el.textContent=Math.round(target*eased);
+    el.textContent=fmt(Math.round(target*eased));
     if(p<1)requestAnimationFrame(tick);
   })(t0);
   cio.unobserve(el);
