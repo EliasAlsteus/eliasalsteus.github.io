@@ -322,12 +322,7 @@ h2 em{color:var(--accent);font-style:normal}
   max-width:920px;font-weight:400;color:var(--foam);
 }
 .about-quote em{color:var(--accent)}
-.about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px}
-.fact{background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;padding:28px;transition:border-color .3s,background .3s}
-.fact:hover{border-color:var(--line);background:var(--surface-2)}
-.fact .icon{font-size:1.4rem;margin-bottom:12px;display:block}
-.fact h4{font-size:.95rem;font-weight:600;margin-bottom:6px;color:var(--foam)}
-.fact p{color:var(--muted);font-size:.88rem}
+.about-aside{margin-top:40px;max-width:720px;color:var(--muted);font-size:1rem;padding-top:28px;border-top:1px solid var(--line-soft)}
 
 /* ---------- contact ---------- */
 .contact{
@@ -373,7 +368,6 @@ footer .mono{font-family:var(--mono)}
   .stat:nth-child(1),.stat:nth-child(2){border-top:none}
   .projects-grid{grid-template-columns:1fr}
   .two-col{grid-template-columns:1fr;gap:56px}
-  .about-facts{grid-template-columns:1fr}
   .contact{padding:64px 28px}
   .nav-links a:not(.btn){display:none}
   .hero-foot .counter small{display:none}
@@ -701,11 +695,7 @@ footer .mono{font-family:var(--mono)}
       <span class="sec-num">05 · About</span>
     </div>
     <p class="about-quote reveal">When my friends and I wanted a reason to run more, I didn't start a group chat. I built an app, got rejected by Apple three times, and <em>kept going</em> until it was in the store. I'd rather make a small thing that exists than plan a big thing that doesn't.</p>
-    <div class="about-facts">
-      <div class="fact reveal"><span class="icon">⚽</span><h4>Team player</h4><p>Played football with Tranemo IF from youth to senior level, captain in selected matches. Teamwork and showing up came from the pitch first.</p></div>
-      <div class="fact reveal" style="--d:.1s"><span class="icon">🏃</span><h4>Runs his own app</h4><p>Endurance sports, strength training and hiking. RunIt started because my friends and I wanted a reason to run more. Now it's how we keep each other going.</p></div>
-      <div class="fact reveal" style="--d:.2s"><span class="icon">🌱</span><h4>Building toward my own thing</h4><p>Started my first company at 17 through Ung Företagsamhet. RunIt is the second attempt, and the first one with real users.</p></div>
-    </div>
+    <p class="about-aside reveal">Off the keyboard: football with Tranemo IF from youth to senior level, captain in selected matches, and long runs and gym sessions that end up as kilometers in RunIt.</p>
   </div>
 </section>
 
