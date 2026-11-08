@@ -174,7 +174,7 @@ header{
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat{padding:40px 24px;text-align:center;border-left:1px solid var(--line-soft)}
 .stat:first-child{border-left:none}
-.stat b{display:block;font-family:var(--display);font-weight:400;font-size:2.9rem;line-height:1;color:var(--foam);letter-spacing:.01em}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:2.9rem;line-height:1;color:var(--foam);letter-spacing:.01em;white-space:nowrap}
 .stat b span{font-family:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline;color:inherit;letter-spacing:inherit;text-transform:none;margin:0}
 .stat b .unit{color:var(--runit);font-size:1.7rem}
 .stat>span{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:12px;display:block}
@@ -383,6 +383,9 @@ footer .mono{font-family:var(--mono)}
   .phone:nth-child(n+4){display:block}
   .features{grid-template-columns:1fr}
   .runit-facts{grid-template-columns:1fr 1fr}
+  .stat{padding:32px 14px}
+  .stat b{font-size:2.4rem}
+  .stat b .unit{font-size:1.25rem}
 }
 @media(max-width:600px){
   .hero-foot{position:static;margin-top:40px;padding-bottom:32px}
