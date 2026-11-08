@@ -169,13 +169,15 @@ header{
 .socials svg{width:17px;height:17px}
 
 /* ---------- stats ---------- */
-.stats{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--surface)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1200px;margin:0 auto}
-.stat{padding:46px 24px;text-align:center;border-left:1px solid var(--line-soft)}
+.stats{background:var(--surface);border:1px solid var(--line-soft);border-radius:20px;overflow:hidden}
+.runit-stats{margin-bottom:28px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:40px 24px;text-align:center;border-left:1px solid var(--line-soft)}
 .stat:first-child{border-left:none}
 .stat b{display:block;font-family:var(--display);font-weight:400;font-size:2.9rem;line-height:1;color:var(--foam);letter-spacing:.01em}
-.stat b .unit{color:var(--accent);font-size:1.7rem}
-.stat span{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:12px;display:block}
+.stat b span{font-family:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline;color:inherit;letter-spacing:inherit;text-transform:none;margin:0}
+.stat b .unit{color:var(--runit);font-size:1.7rem}
+.stat>span{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:12px;display:block}
 
 /* ---------- sections ---------- */
 section{padding:120px 0}
@@ -469,15 +471,6 @@ footer .mono{font-family:var(--mono)}
   </div>
 </header>
 
-<div class="stats">
-  <div class="stats-grid">
-    <div class="stat reveal"><b><span data-count="2">0</span></b><span>App stores, iOS + Android</span></div>
-    <div class="stat reveal" style="--d:.1s"><b><span data-count="10">0</span><span class="unit">+</span></b><span>Adventures to run</span></div>
-    <div class="stat reveal" style="--d:.2s"><b><span data-count="1600">0</span><span class="unit">+</span></b><span>Commits since July 2026</span></div>
-    <div class="stat reveal" style="--d:.3s"><b><span data-count="68">0</span><span class="unit">%</span></b><span>Users still active after 30 days</span></div>
-  </div>
-</div>
-
 <section id="runit">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -516,6 +509,15 @@ footer .mono{font-family:var(--mono)}
         <div class="rfact"><b>10<span class="unit"> Aug</span></b><span>Live on the App Store, after three rejections</span></div>
         <div class="rfact"><b>1<span class="unit"> Nov</span></b><span>Public on Google Play</span></div>
         <div class="rfact"><b>1<span class="unit"> codebase</span></b><span>Web, iOS and Android from the same Next.js app</span></div>
+      </div>
+    </div>
+
+    <div class="stats runit-stats reveal">
+      <div class="stats-grid">
+        <div class="stat"><b><span data-count="10">0</span><span class="unit">+</span></b><span>Adventures to run</span></div>
+        <div class="stat"><b><span data-count="72">0</span></b><span>Users, mostly friends of friends</span></div>
+        <div class="stat"><b><span data-count="1600">0</span><span class="unit">+</span></b><span>Commits since July 2026</span></div>
+        <div class="stat"><b><span data-count="68">0</span><span class="unit">%</span></b><span>Still active after 30 days</span></div>
       </div>
     </div>
 
